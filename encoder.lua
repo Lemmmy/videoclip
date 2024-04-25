@@ -10,11 +10,6 @@ local h = require('helpers')
 local utils = require('mp.utils')
 local this = {}
 
-local function toms(timestamp)
-    --- Trim timestamp down to milliseconds.
-    return string.format("%.3f", timestamp)
-end
-
 local function construct_output_filename_noext()
     local filename = mp.get_property("filename") -- filename without path
 
@@ -76,8 +71,8 @@ this.mkargs_video = function(out_clip_path)
         table.concat { '--sub-font=', this.config.sub_font },
         table.concat { '--ovc=', this.config.video_codec },
         table.concat { '--oac=', this.config.audio_codec },
-        table.concat { '--start=', toms(this.timings['start']) },
-        table.concat { '--end=', toms(this.timings['end']) },
+        table.concat { '--start=', this.timings['start'] },
+        table.concat { '--end=', this.timings['end'] },
         table.concat { '--aid=', mp.get_property("aid") }, -- track number
         table.concat { '--mute=', mp.get_property("mute") },
         -- table.concat { '--volume=', mp.get_property('volume') },
@@ -122,8 +117,8 @@ this.mkargs_audio = function(out_clip_path)
         '--oacopts-add=application=voip',
         '--oacopts-add=compression_level=10',
         table.concat { '--oac=', this.config.audio_codec },
-        table.concat { '--start=', toms(this.timings['start']) },
-        table.concat { '--end=', toms(this.timings['end']) },
+        table.concat { '--start=', this.timings['start'] },
+        table.concat { '--end=', this.timings['end'] },
         table.concat { '--volume=', mp.get_property('volume') },
         table.concat { '--aid=', mp.get_property("aid") }, -- track number
         table.concat { '--oacopts-add=b=', this.config.audio_bitrate },
@@ -138,7 +133,7 @@ this.create_clip = function(clip_type, on_complete)
     end
 
     if not this.timings:validate() then
-        h.notify("Wrong timings. Aborting.", "warn", 2)
+        h.notify_error("Wrong timings. Aborting.", "warn", 2)
         return
     end
 
@@ -160,13 +155,13 @@ this.create_clip = function(clip_type, on_complete)
     local output_dir_path = utils.split_path(output_file_path)
     local location_info = utils.file_info(output_dir_path)
     if not location_info.is_dir then
-        h.notify(string.format("Error: location %s doesn't exist.", output_dir_path), "error", 5)
+        h.notify_error(string.format("Error: location %s doesn't exist.", output_dir_path), "error", 5)
         return
     end
 
     local process_result = function(_, ret, _)
         if ret.status ~= 0 or string.match(ret.stdout, "could not open") then
-            h.notify(string.format("Error: couldn't create clip %s.", output_file_path), "error", 5)
+            h.notify_error(string.format("Error: couldn't create clip %s.", output_file_path), "error", 5)
         else
             h.notify(string.format("Clip saved to %s.", output_file_path), "info", 2)
             if on_complete then
