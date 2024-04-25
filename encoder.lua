@@ -75,7 +75,7 @@ this.mkargs_video = function(out_clip_path)
         table.concat { '--end=', this.timings['end'] },
         table.concat { '--aid=', mp.get_property("aid") }, -- track number
         table.concat { '--mute=', mp.get_property("mute") },
-        table.concat { '--volume=', mp.get_property('volume') },
+        -- table.concat { '--volume=', mp.get_property('volume') },
         table.concat { '--ovcopts-add=b=', this.config.video_bitrate },
         table.concat { '--oacopts-add=b=', this.config.audio_bitrate },
         table.concat { '--ovcopts-add=crf=', this.config.video_quality },
