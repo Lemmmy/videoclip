@@ -1,11 +1,6 @@
-![screenshot](https://user-images.githubusercontent.com/69171671/97077527-0836ef00-15d4-11eb-92a5-bfa236a6b118.png)
+![screenshot](https://github.com/Lemmmy/videoclip/assets/858456/77dcd3e8-d6a5-42ad-9f8b-26091f8fc40f)
 
-# videoclip
-
-[![Chat](https://img.shields.io/badge/chat-join-green)](https://tatsumoto-ren.github.io/blog/join-our-community.html)
-![GitHub](https://img.shields.io/github/license/Ajatt-Tools/videoclip)
-![GitHub top language](https://img.shields.io/github/languages/top/Ajatt-Tools/videoclip)
-![Lines of code](https://img.shields.io/tokei/lines/github/Ajatt-Tools/videoclip)
+# videoclip, Lemmmy edition
 
 Easily create video and audio clips with mpv in a few keypresses.
 Videoclips are saved as `.mp4` or `.webm`.
@@ -32,7 +27,7 @@ Clone the repository to the `mpv/scripts` directory.
 The command below works on the GNU operating system with `git` installed.
 
 ``` bash
-git clone 'https://github.com/Ajatt-Tools/videoclip.git' ~/.config/mpv/scripts/videoclip
+git clone 'https://github.com/Lemmmy/videoclip.git' ~/.config/mpv/scripts/videoclip
 ```
 
 To update the user-script on demand later, you can execute:
@@ -44,7 +39,7 @@ cd ~/.config/mpv/scripts/videoclip && git pull
 ### Manually
 
 Download
-[the repository](https://github.com/Ajatt-Tools/videoclip/archive/refs/heads/master.zip)
+[the repository](https://github.com/Lemmmy/videoclip/archive/refs/heads/master.zip)
 and extract the folder containing
 `videoclip.lua`
 to your [mpv scripts](https://github.com/mpv-player/mpv/wiki/User-Scripts) directory:
