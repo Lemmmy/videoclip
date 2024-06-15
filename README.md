@@ -27,7 +27,7 @@ Clone the repository to the `mpv/scripts` directory.
 The command below works on the GNU operating system with `git` installed.
 
 ``` bash
-git clone 'https://github.com/Lemmmy/videoclip.git' ~/.config/mpv/scripts/videoclip
+git clone -b lemmmy/main https://github.com/Lemmmy/videoclip.git ~/.config/mpv/scripts/videoclip
 ```
 
 To update the user-script on demand later, you can execute:
@@ -39,7 +39,7 @@ cd ~/.config/mpv/scripts/videoclip && git pull
 ### Manually
 
 Download
-[the repository](https://github.com/Lemmmy/videoclip/archive/refs/heads/master.zip)
+[the repository](https://github.com/Lemmmy/videoclip/archive/refs/heads/lemmmy/main.zip)
 and extract the folder containing
 `videoclip.lua`
 to your [mpv scripts](https://github.com/mpv-player/mpv/wiki/User-Scripts) directory:
