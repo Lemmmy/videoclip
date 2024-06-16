@@ -1,4 +1,4 @@
-![screenshot](https://github.com/Lemmmy/videoclip/assets/858456/77dcd3e8-d6a5-42ad-9f8b-26091f8fc40f)
+![screenshot](https://github.com/Lemmmy/videoclip/assets/858456/855bff15-b0cd-4c12-a9ac-40a5e01d3b83)
 
 # videoclip, Lemmmy edition
 
